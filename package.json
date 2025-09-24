@@ -1,0 +1,16 @@
+{
+  "name": "nitro-app",
+  "private": true,
+  "scripts": {
+    "build": "nitro build",
+    "dev": "PORT=3001 nitro dev",
+    "postinstall": "nitro prepare"
+  },
+  "devDependencies": {
+    "h3": "^1.15.4",
+    "nitropack": "^2.12.4"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.7.3"
+  }
+}
