@@ -14,8 +14,7 @@
     "pm2:logs": "pm2 logs",
     "pm2:monit": "pm2 monit",
     "pm2:list": "pm2 list",
-    "deploy:app": "sh deploy.sh",
-    "deploy:models": "sh deploy-models.sh"
+    "prod:logs": "sh prod-logs.sh"
   },
   "devDependencies": {
     "h3": "^1.15.4",
@@ -23,5 +22,10 @@
   },
   "dependencies": {
     "@huggingface/transformers": "^3.7.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@huggingface/transformers>onnxruntime-node": "1.22.0-rev"
+    }
   }
 }

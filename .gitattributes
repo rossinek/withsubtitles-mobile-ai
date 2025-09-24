@@ -1,1 +1,3 @@
 *.onnx filter=lfs diff=lfs merge=lfs -text
+.output/server/node_modules/onnxruntime-node/bin/**/*.so.* filter=lfs diff=lfs merge=lfs -text
+.output/server/node_modules/onnxruntime-node/bin/**/*.so filter=lfs diff=lfs merge=lfs -text
