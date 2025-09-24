@@ -4,7 +4,18 @@
   "scripts": {
     "build": "nitro build",
     "dev": "PORT=3001 nitro dev",
-    "postinstall": "nitro prepare"
+    "postinstall": "nitro prepare",
+    "preview": "node --env-file=.env .output/server/index.mjs",
+    "pm2:start": "pm2 start pm2.config.js",
+    "pm2:stop": "pm2 stop pm2.config.js",
+    "pm2:restart": "pm2 restart pm2.config.js",
+    "pm2:reload": "pm2 reload pm2.config.js",
+    "pm2:delete": "pm2 delete pm2.config.js",
+    "pm2:logs": "pm2 logs",
+    "pm2:monit": "pm2 monit",
+    "pm2:list": "pm2 list",
+    "deploy:app": "sh deploy.sh",
+    "deploy:models": "sh deploy-models.sh"
   },
   "devDependencies": {
     "h3": "^1.15.4",
