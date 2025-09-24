@@ -1,3 +1,3 @@
-# Nitro starter
+# With Subtitles AI API
 
-Look at the [nitro quick start](https://nitro.build/guide#quick-start) to learn more how to get started.
+Super simple node server to be used as a service for small CPU AI (e.g. punctuate).
