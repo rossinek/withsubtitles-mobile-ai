@@ -1,0 +1,25 @@
+{
+  "add_prefix_space": true,
+  "bos_token": "<s>",
+  "clean_up_tokenization_spaces": true,
+  "cls_token": "<s>",
+  "eos_token": "</s>",
+  "mask_token": {
+    "__type": "AddedToken",
+    "content": "<mask>",
+    "lstrip": true,
+    "normalized": true,
+    "rstrip": false,
+    "single_word": false
+  },
+  "max_length": 512,
+  "model_max_length": 512,
+  "pad_token": "<pad>",
+  "sep_token": "</s>",
+  "stride": 0,
+  "strip_accent": false,
+  "tokenizer_class": "XLMRobertaTokenizer",
+  "truncation_side": "right",
+  "truncation_strategy": "longest_first",
+  "unk_token": "<unk>"
+}
