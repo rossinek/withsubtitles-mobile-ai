@@ -48,6 +48,9 @@ jobs:
           git fetch origin prod:prod || git checkout -b prod
           git checkout prod
 
+          # Remove everything tracked on this branch
+          git rm -rf .
+
           # Remove existing build artifacts
           rm -rf .output
 
@@ -61,7 +64,7 @@ jobs:
         run: |
           # Add build artifacts and commit
           git add .output --force
-          git commit -m "Add build artifacts for $(git rev-parse --short HEAD)"
+          git commit -m "Build for $(git rev-parse --short HEAD)"
 
           # Push to prod branch
           git push origin prod
