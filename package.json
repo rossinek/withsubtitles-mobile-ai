@@ -14,7 +14,8 @@
     "pm2:logs": "pm2 logs",
     "pm2:monit": "pm2 monit",
     "pm2:list": "pm2 list",
-    "prod:logs": "sh prod-logs.sh"
+    "prod:logs": "sh prod-logs.sh",
+    "prod:update": "sh prod-update.sh"
   },
   "devDependencies": {
     "h3": "^1.15.4",
