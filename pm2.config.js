@@ -1,9 +1,11 @@
+const path = require('path')
+
 module.exports = {
   apps: [{
     name: 'withsubtitles-ai',
     script: '.output/server/index.mjs',
     cwd: __dirname,
-    node_args: '--env-file=.env',
+    node_args: `--env-file=${path.join(__dirname, '.env')}`,
     instances: 1,
     autorestart: true,
     watch: false,
