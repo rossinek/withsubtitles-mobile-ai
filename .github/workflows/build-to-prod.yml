@@ -35,16 +35,36 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Type check
-        run: pnpm run build
-
-      - name: Push build to branch
+      - name: Prepare prod branch
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git config --local http.postBuffer 524288000
           git config --local http.lowSpeedLimit 0
           git config --local http.lowSpeedTime 999999
+
+          # Fetch and checkout prod branch
+          git branch -D prod || true
+          git fetch origin prod:prod || git checkout -b prod
+          git checkout prod
+
+          # Remove everything tracked on this branch
+          git rm -rf .
+
+          # Remove existing build artifacts
+          rm -rf .output
+
+          # Copy all changes from main without changing prod history
+          git checkout origin/main -- .
+
+      - name: Build application
+        run: pnpm run build
+
+      - name: Commit and push build
+        run: |
+          # Add build artifacts and commit
           git add .output --force
-          git commit -m "Add build artifacts"
-          git push origin HEAD:prod --force
+          git commit -m "Build for $(git rev-parse --short HEAD)"
+
+          # Push to prod branch
+          git push origin prod

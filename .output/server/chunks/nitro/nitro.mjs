@@ -4520,10 +4520,12 @@ const _cxKKDE = eventHandler((event) => {
 });
 
 const _lazy_DPtYb3 = () => import('../routes/api/punctuate.mjs');
+const _lazy_umIYcR = () => import('../routes/healthcheck.mjs');
 
 const handlers = [
   { route: '', handler: _cxKKDE, lazy: false, middleware: true, method: undefined },
-  { route: '/api/punctuate', handler: _lazy_DPtYb3, lazy: true, middleware: false, method: undefined }
+  { route: '/api/punctuate', handler: _lazy_DPtYb3, lazy: true, middleware: false, method: undefined },
+  { route: '/healthcheck', handler: _lazy_umIYcR, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
