@@ -21,7 +21,11 @@ export class PunctuateService {
     if (!this.instance) {
       this.instance = pipeline('token-classification', 'punctuate', {
         progress_callback,
-        dtype: 'q8'
+        dtype: 'q8',
+        session_options: {
+          interOpNumThreads: 1,
+      },
+
       }) as unknown as Promise<(text: string) => Promise<PunctuateTokenResult[]>>;
     }
 
