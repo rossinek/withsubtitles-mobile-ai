@@ -1,0 +1,19 @@
+{
+  "name": "nitro-app-prod",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@huggingface/transformers": "3.7.3",
+    "@img/colour": "1.0.0",
+    "@img/sharp-libvips-linux-x64": "1.2.3",
+    "@img/sharp-libvips-linuxmusl-x64": "1.2.3",
+    "@img/sharp-linux-x64": "0.34.4",
+    "@img/sharp-linuxmusl-x64": "0.34.4",
+    "detect-libc": "2.1.1",
+    "onnxruntime-common": "1.22.0",
+    "onnxruntime-node": "1.22.0-rev",
+    "semver": "7.7.2",
+    "sharp": "0.34.4"
+  }
+}
